@@ -170,6 +170,25 @@ FRAM_ERROR_BUSY             Puce occupée
 
 ## Exemples
 
+### Projet PlatformIO ESP8266
+
+[`examples/ESP8266-FRAM/`](examples/ESP8266-FRAM/) — Projet PlatformIO complet pour ESP8266 (ESP12E) avec 10 démonstrations :
+
+| # | Exemple | Description |
+|---|---------|-------------|
+| 1 | `BasicInit` | Initialisation et test basique |
+| 2 | `TypesDeDonnees` | uint8, int16, int32, float, double, struct, string |
+| 3 | `GestionErreurs` | Tests de protection mémoire (overflow, NULL, etc.) |
+| 4 | `MultiPuces` | Gestion de 2 puces et FRAM_Manager |
+| 5 | `BufferCirculaire` | Buffer de log circulaire avec 50 entrées |
+| 6 | `DumpEtManipulation` | Dump hex+ASCII, clear, fill |
+| 7 | `CompteurPersistant` | Compteur de boot (survit au reset) |
+| 8 | `ConfigurationSysteme` | Sauvegarde/restauration de config système |
+| 9 | `Performance` | Benchmarks écriture/lecture |
+| 10 | `LowPowerMode` | Opérations à 100 kHz |
+
+Lancement : ouvrir le dossier dans PlatformIO, compiler et téléverser.
+
 ### Test complet et autonome
 
 [`examples/Test_FRAM_Complet/`](examples/Test_FRAM_Complet/Test_FRAM_Complet.ino) — Programme de validation complet qui exécute 10 tests :
