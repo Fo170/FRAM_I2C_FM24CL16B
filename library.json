@@ -18,5 +18,6 @@
   "homepage": "https://github.com/Fo170/FRAM_I2C_FM24CL16B",
   "frameworks": "arduino",
   "platforms": ["atmelavr", "espressif8266", "espressif32", "teensy", "ststm32"],
-  "headers": "FRAM_I2C_FM24CL16B.h"
+  "headers": "FRAM_I2C_FM24CL16B.h",
+  "examples": "examples/*/*.ino"
 }

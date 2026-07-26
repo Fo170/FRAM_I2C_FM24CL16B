@@ -168,86 +168,19 @@ FRAM_ERROR_INVALID_DEVICE   Puce invalide
 FRAM_ERROR_BUSY             Puce occupée
 ```
 
-## Exemples
+## Exemple
 
-### Exemple 1 : écriture et lecture simple
+Un sketch de test complet est disponible dans [`examples/fram_test/`](examples/fram_test/fram_test.ino). Il couvre :
 
-```cpp
-#include <Arduino.h>
-#include <FRAM_I2C_FM24CL16B.h>
-
-FRAM_FM24CL16B fram;
-
-void setup() {
-    Serial.begin(115200);
-    Wire.setPins(4, 5); // ESP32 : SDA=GPIO4, SCL=GPIO5
-
-    if (!fram.begin()) {
-        Serial.println("FRAM non détectée !");
-        return;
-    }
-
-    const char *msg = "Hello FRAM!";
-    fram.write(0, msg, strlen(msg) + 1);
-
-    char buffer[32];
-    fram.read(0, buffer, sizeof(buffer));
-    Serial.println(buffer);
-}
-
-void loop() {}
-```
-
-### Exemple 2 : multi-puces avec FRAM_Manager
-
-```cpp
-#include <Arduino.h>
-#include <FRAM_I2C_FM24CL16B.h>
-
-FRAM_Manager manager;
-
-void setup() {
-    Serial.begin(115200);
-
-    // Ajoute jusqu'à 8 puces (seules les puces présentes sont détectées)
-    manager.addDevice(FRAM_ADDR_000);
-    manager.addDevice(FRAM_ADDR_001);
-
-    Serial.print("Puce(s) détectée(s) : ");
-    Serial.println(manager.getDeviceCount());
-    Serial.print("Capacité totale : ");
-    Serial.print(manager.getTotalSize());
-    Serial.println(" octets");
-
-    // Écriture dans l'espace d'adressage global
-    const char *data = "Test multi-puces";
-    manager.writeGlobal(500, data, strlen(data) + 1);
-}
-
-void loop() {}
-```
-
-### Exemple 3 : effacement et dump
-
-```cpp
-#include <Arduino.h>
-#include <FRAM_I2C_FM24CL16B.h>
-
-FRAM_FM24CL16B fram;
-
-void setup() {
-    Serial.begin(115200);
-    fram.begin();
-
-    fram.clearAll();
-    fram.fill(0, 64, 0xAA);
-
-    Serial.println("Contenu après fill :");
-    fram.dump(0, 64);
-}
-
-void loop() {}
-```
+- Initialisation et détection
+- `writeByte` / `readByte`, `writeInt` / `readInt`, `writeLong` / `readLong`
+- `writeFloat` / `readFloat`, `writeDouble` / `readDouble`
+- `write` / `read` par blocs
+- `clear()`, `fill()`, `clearAll()`
+- Gestion des erreurs (overflow, pointeur nul, longueur nulle)
+- `readByte()` en retour direct
+- `dump()` hex+ASCII
+- `FRAM_Manager` multi-puces
 
 ## Compatibilité
 
