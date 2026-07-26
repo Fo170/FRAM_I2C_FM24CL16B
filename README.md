@@ -168,19 +168,28 @@ FRAM_ERROR_INVALID_DEVICE   Puce invalide
 FRAM_ERROR_BUSY             Puce occupée
 ```
 
-## Exemple
+## Exemples
 
-Un sketch de test complet est disponible dans [`examples/fram_test/`](examples/fram_test/fram_test.ino). Il couvre :
+### Test complet et autonome
 
-- Initialisation et détection
-- `writeByte` / `readByte`, `writeInt` / `readInt`, `writeLong` / `readLong`
-- `writeFloat` / `readFloat`, `writeDouble` / `readDouble`
-- `write` / `read` par blocs
-- `clear()`, `fill()`, `clearAll()`
-- Gestion des erreurs (overflow, pointeur nul, longueur nulle)
-- `readByte()` en retour direct
-- `dump()` hex+ASCII
-- `FRAM_Manager` multi-puces
+[`examples/Test_FRAM_Complet/`](examples/Test_FRAM_Complet/Test_FRAM_Complet.ino) — Programme de validation complet qui exécute 10 tests :
+
+| # | Test | Description |
+|---|------|-------------|
+| 1 | Initialisation I2C | Détection de la puce |
+| 2 | Octet basique | Patterns 0x00, 0xFF, 0x55, 0xAA... |
+| 3 | Frontière de page | Accès aux adresses 0x00FF→0x0100, etc. |
+| 4 | Bloc séquentiel | 256 octets en une seule opération |
+| 5 | Types de données | int16, int32, float, double, struct, string |
+| 6 | Protection d'adresse | Overflow, NULL, longueur nulle |
+| 7 | Clear / Fill | Remplissage 0x00 et 0xAA |
+| 8 | Persistance | Compteur de boot avec magic value |
+| 9 | Walk mémoire | Test rapide sur toute la plage |
+| 10 | Stress | 10 cycles écriture/lecture |
+
+### Test de base
+
+[`examples/fram_test/`](examples/fram_test/fram_test.ino) — Sketch minimal couvrant l'essentiel de l'API.
 
 ## Compatibilité
 
