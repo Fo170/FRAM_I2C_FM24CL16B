@@ -172,7 +172,7 @@ FRAM_ERROR_BUSY             Puce occupée
 
 ### Projet PlatformIO ESP8266
 
-[`examples/ESP8266-FRAM/`](examples/ESP8266-FRAM/) — Projet PlatformIO complet pour ESP8266 (ESP12E) avec 10 démonstrations :
+[`examples/esp8266_demo/`](examples/esp8266_demo/) — Projet PlatformIO complet pour ESP8266 (ESP12E) avec 10 démonstrations :
 
 | # | Exemple | Description |
 |---|---------|-------------|
@@ -191,7 +191,7 @@ Lancement : ouvrir le dossier dans PlatformIO, compiler et téléverser.
 
 ### Test complet et autonome
 
-[`examples/Test_FRAM_Complet/`](examples/Test_FRAM_Complet/Test_FRAM_Complet.ino) — Programme de validation complet qui exécute 10 tests :
+[`examples/comprehensive_test/`](examples/comprehensive_test/Test_FRAM_Complet.ino) — Programme de validation complet qui exécute 10 tests :
 
 | # | Test | Description |
 |---|------|-------------|
@@ -208,7 +208,7 @@ Lancement : ouvrir le dossier dans PlatformIO, compiler et téléverser.
 
 ### Test de base
 
-[`examples/fram_test/`](examples/fram_test/fram_test.ino) — Sketch minimal couvrant l'essentiel de l'API.
+[`examples/basic_test/`](examples/basic_test/fram_test.ino) — Sketch minimal couvrant l'essentiel de l'API.
 
 ## Compatibilité
 
