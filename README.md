@@ -25,7 +25,7 @@ Ajoutez à votre `platformio.ini` :
 
 ```ini
 lib_deps =
-    https://github.com/Fo170/FRAM_I2C_FM24CL16B.git
+    https://github.com/Fo170/FRAM_I2C_FM24CL16B.git@^1.0.0
 ```
 
 Ou placez le dossier dans `lib/` de votre projet.
