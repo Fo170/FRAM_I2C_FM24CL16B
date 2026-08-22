@@ -9,12 +9,13 @@
   },
   "authors": [
     {
-      "name": "Fo170",
+      "name": "Olivier FOURNET",
+      "email": "olivier.fournet@free.fr",
       "url": "https://github.com/Fo170",
       "maintainer": true
     }
   ],
-  "license": "GPL-3.0-or-later",
+  "license": "GPL-3.0-only",
   "homepage": "https://github.com/Fo170/FRAM_I2C_FM24CL16B",
   "frameworks": "arduino",
   "platforms": ["atmelavr", "espressif8266", "espressif32", "teensy", "ststm32"],
