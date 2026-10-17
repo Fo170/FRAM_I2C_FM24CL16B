@@ -16,6 +16,9 @@
 #ifndef FRAM_I2C_FM24CL16B_H
 #define FRAM_I2C_FM24CL16B_H
 
+
+// Version de la librairie (source UNIQUE — agrégée par liste_lib.h)
+#define __FRAM_I2C_FM24CL16B_H_VERSION__ "1.0.0"
 #include <Wire.h>
 #include <Stream.h>
 
