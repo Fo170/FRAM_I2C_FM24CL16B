@@ -1,6 +1,6 @@
 {
   "name": "FRAM_I2C_FM24CL16B",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Arduino library for Cypress FM24CL16B 16-Kbit FRAM over I2C. Supports single-chip and multi-chip (up to 8) configurations with automatic page-boundary handling.",
   "keywords": "fram, i2c, memory, fm24cl16b, cypress, non-volatile, storage, ferroelectric",
   "repository": {

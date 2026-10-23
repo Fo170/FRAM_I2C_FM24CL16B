@@ -18,7 +18,7 @@
 
 
 // Version de la librairie (source UNIQUE — agrégée par liste_lib.h)
-#define __FRAM_I2C_FM24CL16B_H_VERSION__ "1.0.1"
+#define __FRAM_I2C_FM24CL16B_H_VERSION__ "1.0.2"
 #include <Wire.h>
 #include <Stream.h>
 
@@ -136,7 +136,7 @@ public:
 
     bool isInitialized() { return _initialized; }
     uint8_t getDeviceAddress() { return _deviceAddr; }
-    uint16_t getBaseAddress() { return _baseAddress; }
+    uint16_t getBaseAddress() const { return _baseAddress; }
 
     fram_error_t write(uint16_t startAddress, const void *data, uint16_t len) {
         if (data == nullptr) return FRAM_ERROR_NULL_POINTER;
@@ -390,8 +390,8 @@ public:
         dump(0, FRAM_SIZE_BYTES, output);
     }
 
-    uint16_t getSize() { return FRAM_SIZE_BYTES; }
-    uint16_t getMaxAddr() { return FRAM_MAX_ADDRESS; }
+    uint16_t getSize() const { return FRAM_SIZE_BYTES; }
+    uint16_t getMaxAddr() const { return FRAM_MAX_ADDRESS; }
 };
 
 // ============================================
